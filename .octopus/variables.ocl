@@ -44,3 +44,7 @@ variable "Project.Database.User.Name" {
         environment = ["production"]
     }
 }
+
+variable "Project.Connection.String" {
+    value "Server=(localdb)\\MSSQLLocalDB;Integrated Security=true;Database=#{Project.Database.Name}" {}
+}
