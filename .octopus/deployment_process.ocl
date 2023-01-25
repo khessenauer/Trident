@@ -216,3 +216,16 @@ step "send-slack-message-on-failure" {
         worker_pool_variable = ""
     }
 }
+
+step "auto-approve-database-delta-scripts" {
+    name = "Auto-Approve Database Delta Scripts"
+
+    action {
+        properties = {
+            Octopus.Action.RunOnServer = "true"
+            Octopus.Action.Template.Id = "ActionTemplates-24"
+            Octopus.Action.Template.Version = "0"
+        }
+        worker_pool = "default-worker-pool-1"
+    }
+}
